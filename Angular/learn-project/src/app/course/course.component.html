@@ -1,1 +1,14 @@
-<p>course works!</p>
+<h2>{{ title }}</h2>
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course }}
+  </li>
+</ul>
+
+<img [src]="imageUrl" />
+
+<table>
+  <tr>
+    <td [attr.colspan]="colSpan">TEST</td>
+  </tr>
+</table>
