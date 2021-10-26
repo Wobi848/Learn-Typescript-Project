@@ -1,14 +1,35 @@
+<!-- Interpolation -->
 <h2>{{ title }}</h2>
+<!-- Directives -->
 <ul>
   <li *ngFor="let course of courses">
     {{ course }}
   </li>
 </ul>
-
-<button class="btn btn-primary">Save</button>
-
+<!-- Bootstrap -->
+<button class="btn btn-primary">Bootstrap</button>
+<!-- Class Binding -->
+<button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
+<!-- Style Binding -->
+<button [style.backgroundColor]="isActive ? 'blue' : 'white'">
+  Style Binding
+</button>
+<!-- Event Binding -->
+<button (click)="onEvent($event)">Event Binding</button>
+<!-- Event Filtering -->
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+<!-- Pipes -->
+{{ course.title | uppercase | lowercase }} <br />
+{{ course.students | number }} <br />
+{{ course.rating | number: "2.1-1" }} <br />
+{{ course.price | currency: "AUD":true:"3.2-2" }} <br />
+{{ course.releaseDate | date: "shortDate" }}<br />
+<!-- Costum Pipe -->
+{{ costumPipe | summary }} <br />
+{{ costumPipe | summary:20 }} <br />
+<!-- Property Binding -->
 <img [src]="imageUrl" />
-
+<!-- Attribute Binding -->
 <table>
   <tr>
     <td [attr.colspan]="colSpan">TEST</td>
